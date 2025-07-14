@@ -76,21 +76,61 @@ export default function Home() {
         </section>
 
         {/* Featured Services */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Featured Services</h2>
-          <div className="flex gap-4">
-            {/* Placeholder for services */}
-            <div className="p-4 border rounded-lg">
-              <h3 className="text-xl font-semibold">[Service A]</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Brief description of Service A.
-              </p>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <h3 className="text-xl font-semibold">[Service B]</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Brief description of Service B.
-              </p>
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-12 text-center">
+              Featured Services
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Placeholder for services */}
+              <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  Web Development
+                </h3>
+                <p className="text-gray-600">
+                  Custom web applications built with modern technologies and
+                  best practices.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-green-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  Consulting
+                </h3>
+                <p className="text-gray-600">
+                  Technical consulting and code reviews to help optimize your
+                  development process.
+                </p>
+              </div>
             </div>
           </div>
         </section>
