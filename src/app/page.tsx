@@ -11,7 +11,7 @@ export default function Home() {
         <section className="text-center py-24 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-4xl mx-auto px-6">
             <h1 className="text-5xl font-bold mb-6 text-gray-900">
-              Welcome to euoom's public space!
+              Welcome to euoom&apos;s public space!
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Your personal blog and portfolio space
