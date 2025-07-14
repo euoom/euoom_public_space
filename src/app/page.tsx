@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Navigation } from "@/components";
 
 export default function Home() {
