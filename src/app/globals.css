@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -23,4 +25,56 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Tailwind Typography 스타일 수동 적용 */
+.prose h1 {
+  font-size: 2.25rem; /* 36px */
+  font-weight: bold;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.prose h2 {
+  font-size: 1.875rem; /* 30px */
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+}
+
+.prose p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.75;
+}
+
+.prose strong {
+  font-weight: bold;
+}
+
+.prose ul {
+  list-style-type: disc;
+  margin-left: 1.5em;
+  padding-left: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.prose ul li {
+  margin-bottom: 0.5em;
+}
+
+.prose pre {
+  background-color: #2d2d2d; /* Notion의 코드 블록 배경색과 유사하게 */
+  color: #f8f8f2; /* 코드 색상 */
+  padding: 1em;
+  border-radius: 0.375rem; /* 6px */
+  overflow-x: auto;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.prose pre code {
+  font-family: monospace;
+  font-size: 0.875rem; /* 14px */
 }

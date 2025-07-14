@@ -13,6 +13,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"], // typeRoots 추가
+    "types": ["node", "react", "mermaid"], // types 추가
     "plugins": [
       {
         "name": "next"
