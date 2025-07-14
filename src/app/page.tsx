@@ -137,15 +137,41 @@ export default function Home() {
       </main>
 
       {/* Footer Section */}
-      <footer className="w-full p-4 bg-gray-800 text-white text-center">
-        <p>© 2025 euoom's public space</p>
-        <div className="flex justify-center space-x-4 mt-2">
-          <a href="#" className="hover:underline">
-            Contact
-          </a>
-          <a href="#" className="hover:underline">
-            Social Links
-          </a>
+      <footer className="bg-white border-t border-gray-200">
+        <div className="max-w-6xl mx-auto px-6 py-12">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <div className="w-8 h-8 bg-black rounded-sm flex items-center justify-center">
+                <span className="text-white font-bold text-sm">E</span>
+              </div>
+              <span className="text-lg font-semibold text-gray-900">
+                euoom's public space
+              </span>
+            </div>
+            <p className="text-gray-600 mb-6">
+              © 2025 euoom's public space. All rights reserved.
+            </p>
+            <div className="flex justify-center space-x-6">
+              <a
+                href="#"
+                className="text-gray-500 hover:text-gray-900 transition-colors"
+              >
+                Contact
+              </a>
+              <a
+                href="#"
+                className="text-gray-500 hover:text-gray-900 transition-colors"
+              >
+                GitHub
+              </a>
+              <a
+                href="#"
+                className="text-gray-500 hover:text-gray-900 transition-colors"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
