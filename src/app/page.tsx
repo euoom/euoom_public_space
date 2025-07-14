@@ -146,7 +146,7 @@ export default function Home() {
                 <span className="text-white font-bold text-sm">E</span>
               </div>
               <span className="text-lg font-semibold text-gray-900">
-                euoom's public space
+                euoom&apos;s public space
               </span>
             </div>
             <p className="text-gray-600 mb-6">
