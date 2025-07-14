@@ -17,18 +17,18 @@ export default function Home() {
               Your personal blog and portfolio space
             </p>
             <div className="flex justify-center space-x-4">
-              <a
+              <Link
                 href="/blog"
                 className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
               >
                 Read Blog
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/project"
                 className="border border-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
               >
                 View Projects
-              </a>
+              </Link>
             </div>
           </div>
         </section>
