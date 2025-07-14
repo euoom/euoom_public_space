@@ -34,21 +34,43 @@ export default function Home() {
         </section>
 
         {/* Latest Blog Posts */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Latest Blog Posts</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* Placeholder for blog posts */}
-            <div className="p-4 border rounded-lg">
-              <h3 className="text-xl font-semibold">[Blog Post Title 1]</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Short description of post 1...
-              </p>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <h3 className="text-xl font-semibold">[Blog Post Title 2]</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Short description of post 2...
-              </p>
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl font-bold mb-12 text-center">
+              Latest Blog Posts
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Placeholder for blog posts */}
+              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  Getting Started with Next.js
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Learn the fundamentals of Next.js and how to build modern web
+                  applications...
+                </p>
+                <span className="text-sm text-gray-500">January 15, 2025</span>
+              </div>
+              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  React Best Practices
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Discover essential patterns and practices for writing clean,
+                  maintainable React code...
+                </p>
+                <span className="text-sm text-gray-500">January 10, 2025</span>
+              </div>
+              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  TypeScript Deep Dive
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Advanced TypeScript techniques for building robust
+                  applications...
+                </p>
+                <span className="text-sm text-gray-500">January 5, 2025</span>
+              </div>
             </div>
           </div>
         </section>
