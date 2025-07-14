@@ -150,7 +150,7 @@ export default function Home() {
               </span>
             </div>
             <p className="text-gray-600 mb-6">
-              © 2025 euoom's public space. All rights reserved.
+              © 2025 euoom&apos;s public space. All rights reserved.
             </p>
             <div className="flex justify-center space-x-6">
               <a
