@@ -6,13 +6,31 @@ export default function Home() {
       <Navigation />
 
       {/* Main Content Area */}
-      <main className="flex-grow p-8">
+      <main className="flex-grow">
         {/* Hero Section */}
-        <section className="text-center py-16 bg-gray-100 dark:bg-gray-700 mb-8">
-          <h1 className="text-4xl font-bold mb-4">
-            Welcome to euoom's public space!
-          </h1>
-          <p className="text-lg">Your personal blog and portfolio.</p>
+        <section className="text-center py-24 bg-gradient-to-b from-gray-50 to-white">
+          <div className="max-w-4xl mx-auto px-6">
+            <h1 className="text-5xl font-bold mb-6 text-gray-900">
+              Welcome to euoom's public space!
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              Your personal blog and portfolio space
+            </p>
+            <div className="flex justify-center space-x-4">
+              <a
+                href="/blog"
+                className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+              >
+                Read Blog
+              </a>
+              <a
+                href="/project"
+                className="border border-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+              >
+                View Projects
+              </a>
+            </div>
+          </div>
         </section>
 
         {/* Latest Blog Posts */}
