@@ -25,6 +25,7 @@ module.exports = {
     'bg-teal-500',
     'bg-orange-500',
     'text-white',
+    'rounded-full', // react-pill 컴포넌트의 라운드 보더를 위해 추가
   ],
   theme: {
     extend: {},

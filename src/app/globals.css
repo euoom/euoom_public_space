@@ -176,3 +176,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* react-pill의 .rounded 클래스를 Tailwind의 rounded-full처럼 오버라이드 */
+  .rounded {
+    border-radius: 9999px !important; /* Tailwind의 rounded-full과 유사하게 */
+  }
+}

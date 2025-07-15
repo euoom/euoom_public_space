@@ -1,5 +1,7 @@
+"use client";
+
 import React from 'react';
-import { Badge } from '@/components/ui/badge';
+import { Pill } from 'react-pill';
 
 interface FrontmatterDisplayProps {
   frontmatter: { [key: string]: any };
@@ -7,48 +9,69 @@ interface FrontmatterDisplayProps {
 
 const FrontmatterDisplay: React.FC<FrontmatterDisplayProps> = ({ frontmatter }) => {
 
-  const getBadgeColorClass = (keyword: string): string => {
+  const getPillColor = (keyword: string): string => {
     switch (keyword.toLowerCase()) {
       case '테스트':
-        return 'bg-blue-500 text-white';
+        return '#3B82F6'; // blue-500
       case '블로그':
-        return 'bg-green-500 text-white';
+        return '#22C55E'; // green-500
       case '다른페이지':
-        return 'bg-purple-500 text-white';
+        return '#A855F7'; // purple-500
       default:
-        // 간단한 해시 함수를 사용하여 키워드에 따라 다른 색상을 반환
         let hash = 0;
         for (let i = 0; i < keyword.length; i++) {
           hash = keyword.charCodeAt(i) + ((hash << 5) - hash);
         }
         const colors = [
-          'bg-red-500 text-white', 'bg-yellow-500 text-white', 'bg-indigo-500 text-white',
-          'bg-pink-500 text-white', 'bg-teal-500 text-white', 'bg-orange-500 text-white'
+          '#EF4444', // red-500
+          '#EAB308', // yellow-500
+          '#6366F1', // indigo-500
+          '#EC4899', // pink-500
+          '#14B8A6', // teal-500
+          '#F97316'  // orange-500
         ];
         return colors[Math.abs(hash % colors.length)];
     }
   };
 
   const formatValue = (key: string, value: any): React.ReactNode => {
-    const renderPill = (text: string) => (
-        <Badge className={getBadgeColorClass(text)}>{text}</Badge>
-    );
-
-    const renderWikiLink = (pageName: string) => (
-        <a href={`/blog/${pageName}`}>
-            <Badge variant="outline" className={getBadgeColorClass(pageName)}>{pageName}</Badge>
-        </a>
-    )
+    // react-pill의 data prop 형식에 맞게 변환
+    const transformToPillData = (item: string) => ({
+      label: item,
+      bgcolor: getPillColor(item),
+    });
 
     if (Array.isArray(value)) {
+      const pillData = value.map(item => {
+        if (typeof item === 'string' && item.match(/^\[\[.*\]\]$/)) {
+          const pageName = item.substring(2, item.length - 2);
+          return {
+            label: pageName,
+            bgcolor: getPillColor(pageName),
+            // WikiLink는 별도로 처리해야 하므로, 여기에 Link 컴포넌트를 직접 넣을 수는 없음.
+            // react-pill 컴포넌트가 Link를 직접 렌더링할 수 있는 prop을 제공하지 않으므로,
+            // 이 부분은 외부에서 Link 컴포넌트로 래핑하거나, react-pill의 itemClassName을 활용하여
+            // CSS로 링크처럼 보이게 할 수 있음. 여기서는 단순히 텍스트만 표시.
+          };
+        }
+        return transformToPillData(String(item));
+      });
+
+      // WikiLink 처리를 위해 Link 컴포넌트를 직접 렌더링할 수 없으므로,
+      // 여기서는 react-pill의 Pill 컴포넌트가 Link를 직접 렌더링하지 않도록 함.
+      // 필요하다면 FrontmatterDisplay 외부에서 Link 컴포넌트로 래핑해야 함.
       return (
         <div className="flex flex-wrap gap-2">
           {value.map((item, index) => {
             if (typeof item === 'string' && item.match(/^\[\[.*\]\]$/)) {
                 const pageName = item.substring(2, item.length - 2);
-                return <span key={index}>{renderWikiLink(pageName)}</span>;
+                return (
+                    <a key={index} href={`/blog/${pageName}`} className="no-underline">
+                        <Pill data={[{ label: pageName, bgcolor: getPillColor(pageName) }]} rounded={true} itemClassName="rounded-full" />
+                    </a>
+                );
             }
-            return <span key={index}>{renderPill(String(item))}</span>;
+            return <Pill key={index} data={[transformToPillData(String(item))]} rounded={true} itemClassName="rounded-full" />;
           })}
         </div>
       );
@@ -56,7 +79,11 @@ const FrontmatterDisplay: React.FC<FrontmatterDisplayProps> = ({ frontmatter }) 
 
     if (typeof value === 'string' && value.match(/^\[\[.*\]\]$/)) {
       const pageName = value.substring(2, value.length - 2);
-      return renderWikiLink(pageName);
+      return (
+        <a href={`/blog/${pageName}`} className="no-underline">
+          <Pill data={[{ label: pageName, bgcolor: getPillColor(pageName) }]} rounded={true} itemClassName="rounded-full" />
+        </a>
+      );
     }
 
     return <span className="text-gray-800 dark:text-gray-200">{String(value)}</span>;
