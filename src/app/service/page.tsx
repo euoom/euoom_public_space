@@ -1,18 +1,6 @@
 export default function ServicePage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="w-full p-4 bg-gray-800 text-white flex justify-between items-center">
-        <div className="text-xl font-bold">[로고/사이트명]</div>
-        <nav>
-          <ul className="flex space-x-4">
-            <li><a href="/" className="hover:underline">Home</a></li>
-            <li><a href="/service" className="hover:underline">Service</a></li>
-            <li><a href="/project" className="hover:underline">Project</a></li>
-            <li><a href="/blog" className="hover:underline">Blog</a></li>
-          </ul>
-        </nav>
-      </header>
-
       <main className="flex-grow p-8">
         <section className="text-center py-16 bg-gray-100 dark:bg-gray-700 mb-8">
           <h1 className="text-4xl font-bold mb-4">Our Services</h1>

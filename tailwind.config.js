@@ -2,7 +2,29 @@
 module.exports = {
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './public/**/*.md', // 마크다운 파일 포함
+    './public/**/*.md',
+  ],
+  safelist: [
+    'bg-gray-200',
+    'text-gray-800',
+    'dark:bg-gray-600',
+    'dark:text-gray-100',
+    'bg-blue-100',
+    'text-blue-800',
+    'dark:bg-blue-800',
+    'dark:text-blue-200',
+    'hover:bg-blue-200',
+    'dark:hover:bg-blue-700',
+    'bg-blue-500',
+    'bg-green-500',
+    'bg-purple-500',
+    'bg-red-500',
+    'bg-yellow-500',
+    'bg-indigo-500',
+    'bg-pink-500',
+    'bg-teal-500',
+    'bg-orange-500',
+    'text-white',
   ],
   theme: {
     extend: {},
